@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../domain/entities/user_profile.dart';
 import '../../core/utils/form_validators.dart';
 import '../../core/widgets/app_button.dart';
 import '../../core/widgets/app_text_field.dart';
@@ -31,14 +32,18 @@ class _LoginPageState extends State<LoginPage> {
     setState(() => _isLoading = true);
     await Future<void>.delayed(const Duration(seconds: 2));
     if (!mounted) return;
-    Navigator.pushReplacementNamed(context, AppRoutes.dashboard);
+    Navigator.pushReplacementNamed(
+      context,
+      AppRoutes.dashboard,
+      arguments: UserProfile(
+        name: 'Usuario',
+        email: _emailController.text.trim(),
+      ),
+    );
   }
 
   Future<void> _openRegister() async {
-    final registered = await Navigator.pushNamed(
-      context,
-      AppRoutes.register,
-    );
+    final registered = await Navigator.pushNamed(context, AppRoutes.register);
     if (!mounted || registered != true) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Cuenta creada. Ya puedes iniciar sesión.')),
@@ -62,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                   const Icon(Icons.people_alt_rounded, size: 72),
                   const SizedBox(height: 12),
                   Text(
-                    'Bienvenido a UserMaster',
+                    'Bienvenido a SpiderApp',
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),

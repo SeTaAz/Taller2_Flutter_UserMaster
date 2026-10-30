@@ -1,4 +1,4 @@
-abstract final class FormValidators {
+class FormValidators {
   static String? email(String? value) {
     final email = value?.trim() ?? '';
     if (email.isEmpty) {

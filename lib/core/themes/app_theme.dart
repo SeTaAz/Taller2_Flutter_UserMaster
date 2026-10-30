@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 
 import '../constants/app_colors.dart';
 
-abstract final class AppTheme {
+class AppTheme {
   static ThemeData get light => ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary),
-        useMaterial3: true,
-      );
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: AppColors.primary,
+      primary: AppColors.primary,
+      secondary: AppColors.secondary,
+      error: AppColors.error,
+      surface: AppColors.background,
+    ),
+    scaffoldBackgroundColor: AppColors.background,
+    useMaterial3: true,
+  );
 }

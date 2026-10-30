@@ -31,18 +31,17 @@ class _SplashPageState extends State<SplashPage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(
-              Icons.people_alt_rounded,
-              color: Colors.white,
-              size: 88,
+            Image.asset(
+              'assets/images/Logo.png',
+              width: 120,
+              height: 120,
+              fit: BoxFit.contain,
             ),
             const SizedBox(height: 16),
             Text(
-              'UserMaster',
-              style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+              'SpiderApp',
+              style: Theme.of(context).textTheme.headlineMedium
+                  ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
             ),
           ],
         ),

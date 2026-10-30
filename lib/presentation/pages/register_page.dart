@@ -86,8 +86,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     obscureText: true,
                     textInputAction: TextInputAction.done,
                     validator: (value) {
-                      final requiredError =
-                          FormValidators.requiredValue(value, 'la contraseña');
+                      final requiredError = FormValidators.requiredValue(
+                        value,
+                        'la contraseña',
+                      );
                       if (requiredError != null) return requiredError;
                       if (value != _passwordController.text) {
                         return 'Las contraseñas no coinciden';

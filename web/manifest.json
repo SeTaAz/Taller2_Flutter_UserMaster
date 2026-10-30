@@ -1,11 +1,11 @@
 {
-    "name": "taller_2_usermaster",
-    "short_name": "taller_2_usermaster",
+    "name": "SpiderApp",
+    "short_name": "SpiderApp",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Administra tu perfil y actividad desde una sola aplicación.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
